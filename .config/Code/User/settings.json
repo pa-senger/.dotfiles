@@ -1,0 +1,102 @@
+{
+    // Window settings
+    "window.zoomLevel": 2,
+    // Python settings
+    "python.terminal.activateEnvironment": true,
+    "terminal.integrated.inheritEnv": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    // Fonts and theme
+    "editor.fontVariations": false,
+    "editor.fontFamily": "'DejaVu Sans Mono'",
+    "workbench.colorTheme": "Ayu Light Bordered",
+    "editor.fontSize": 15.5,
+    // Brackets settings
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": false,
+    "explorer.confirmDragAndDrop": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    // Format on save
+    "editor.formatOnSave": true,
+    // Ruler lines
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.tabSize": 2,
+    // GitLens settings
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "explorer.confirmDelete": false,
+    // Inlay hints on CTRL + ALT
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    // Julia settings
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
+    "jupyter.showVariableViewWhenDebugging": true,
+    "search.showLineNumbers": true,
+    // Manage Clangd and Microsoft IntelliSense conflict
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "C_Cpp.configurationWarnings": "disabled",
+    "clangd.path": "/home/pa/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd",
+    "clangd.arguments": [
+        "-log=verbose",
+        "-pretty",
+        "--background-index",
+        "--compile-commands-dir=${workspaceFolder}/build/",
+        "--completion-style=detailed"
+        // "--query-driver=/bin/arm-buildroot-linux-gnueabihf-g++", // for cross-compile usage
+    ],
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    // Notebook settings
+    "notebook.lineNumbers": "on",
+    "editor.largeFileOptimizations": false,
+    "git.terminalAuthentication": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "right"
+    },
+    "editor.fontLigatures": false,
+    "cmake.showOptionsMovedNotification": false,
+    // Annoying lightbulb in notebook
+    "editor.lightbulb.enabled": false,
+    // Oracle SQL
+    "oracledevtools.bookmarkFileFolder": "/home/pa/Oracle/oracle.oracledevtools",
+    "oracledevtools.download.otherFolder": "/home/pa/downloads",
+    "oracledevtools.connectionConfiguration.configFilesFolder": "/home/pa/Oracle/network/admin",
+    "oracledevtools.connectionConfiguration.walletFileFolder": "/home/pa/Oracle/network/admin",
+    "[oraclesql]": {
+        "editor.suggest.showSnippets": true,
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
+        "editor.defaultFormatter": "Oracle.oracledevtools"
+    },
+    "oracledevtools.connections": [
+        {
+            "authenticationType": 2,
+            "dBAPrivilege": "None",
+            "userID": "STAG_P18",
+            "passwordSaved": true,
+            "password": "B#0irq81@$py",
+            "dataSource": "51.91.76.248:15440/coursdb",
+            "connectionType": 2,
+            "databaseHostName": "51.91.76.248",
+            "databasePortNumber": "15440",
+            "databaseServiceName": "coursdb",
+            "tnsAdmin": "/home/pa/Oracle/network/admin",
+            "name": "STAG_P01.coursdb",
+            "color": "none",
+            "currentSchema": "",
+            "addSettingsScopeToConnectionName": false,
+            "addCurrentSchemaToConnectionName": false,
+            "filters": []
+        }
+    ]
+}
