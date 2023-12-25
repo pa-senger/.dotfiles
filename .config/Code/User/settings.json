@@ -1,6 +1,6 @@
 {
     // Window settings
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 1,
     // Python settings
     "python.terminal.activateEnvironment": true,
     "terminal.integrated.inheritEnv": true,
@@ -9,7 +9,7 @@
     "editor.fontVariations": false,
     "editor.fontFamily": "'DejaVu Sans Mono'",
     "workbench.colorTheme": "Ayu Light Bordered",
-    "editor.fontSize": 15.5,
+    "editor.fontSize": 16,
     // Brackets settings
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": false,
