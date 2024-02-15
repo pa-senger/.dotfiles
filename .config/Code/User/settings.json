@@ -1,6 +1,6 @@
 {
     // Window settings
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
     // Python settings
     "python.terminal.activateEnvironment": true,
     "terminal.integrated.inheritEnv": true,
@@ -9,7 +9,7 @@
     "editor.fontVariations": false,
     "editor.fontFamily": "'DejaVu Sans Mono'",
     "workbench.colorTheme": "Ayu Light Bordered",
-    "editor.fontSize": 16,
+    "editor.fontSize": 14,
     // Brackets settings
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": false,
@@ -17,14 +17,15 @@
     "security.workspace.trust.untrustedFiles": "open",
     // Format on save
     "editor.formatOnSave": true,
+    "clang-format.style": "{ BasedOnStyle: llvm, IndentWidth: 4 }",
     // Ruler lines
     "editor.rulers": [
         80,
         120
     ],
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     // GitLens settings
-    "gitlens.currentLine.enabled": false,
+    "gitlens.currentLine.enabled": true,
     "gitlens.hovers.currentLine.over": "line",
     "explorer.confirmDelete": false,
     // Inlay hints on CTRL + ALT
@@ -40,7 +41,7 @@
     // Manage Clangd and Microsoft IntelliSense conflict
     "C_Cpp.intelliSenseEngine": "disabled",
     "C_Cpp.configurationWarnings": "disabled",
-    "clangd.path": "/home/pa/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/16.0.2/clangd_16.0.2/bin/clangd",
+    "clangd.path": "/home/pa/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
     "clangd.arguments": [
         "-log=verbose",
         "-pretty",
@@ -50,7 +51,10 @@
         // "--query-driver=/bin/arm-buildroot-linux-gnueabihf-g++", // for cross-compile usage
     ],
     "[cpp]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
     },
     // Notebook settings
     "notebook.lineNumbers": "on",
@@ -58,12 +62,12 @@
     "git.terminalAuthentication": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
-        "jupyter-notebook": "right"
+        "jupyter-notebook": "left"
     },
     "editor.fontLigatures": false,
     "cmake.showOptionsMovedNotification": false,
     // Annoying lightbulb in notebook
-    "editor.lightbulb.enabled": false,
+    "editor.lightbulb.enabled": "off",
     // Oracle SQL
     "oracledevtools.bookmarkFileFolder": "/home/pa/Oracle/oracle.oracledevtools",
     "oracledevtools.download.otherFolder": "/home/pa/downloads",
@@ -78,25 +82,29 @@
         },
         "editor.defaultFormatter": "Oracle.oracledevtools"
     },
-    "oracledevtools.connections": [
-        {
-            "authenticationType": 2,
-            "dBAPrivilege": "None",
-            "userID": "STAG_P18",
-            "passwordSaved": true,
-            "password": "B#0irq81@$py",
-            "dataSource": "51.91.76.248:15440/coursdb",
-            "connectionType": 2,
-            "databaseHostName": "51.91.76.248",
-            "databasePortNumber": "15440",
-            "databaseServiceName": "coursdb",
-            "tnsAdmin": "/home/pa/Oracle/network/admin",
-            "name": "STAG_P01.coursdb",
-            "color": "none",
-            "currentSchema": "",
-            "addSettingsScopeToConnectionName": false,
-            "addCurrentSchemaToConnectionName": false,
-            "filters": []
-        }
-    ]
+    "python.defaultInterpreterPath": "/home/pa/miniforge3/envs/cs/bin/python",
+    // Git
+    "git.suggestSmartCommit": false,
+    "git.autofetch": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.insertSpaces": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // LaTeX Workshop
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.autoCompile.run": "never",
+    "latex-workshop.latex.autoCompile.interval": 0,
+    "latex-workshop.latex.autoCompile.onFailedBuild": false,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    }    
+      
+
 }
