@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/bin/zsh
 cd /opt/sqldeveloper && bash ./sqldeveloper.sh
