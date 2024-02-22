@@ -73,7 +73,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git ssh-agent)
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+# zstyle :omz:plugins:ssh-agent helper ksshaskpass
+# zstyle :omz:plugins:ssh-agent identities ~/.config/ssh/{id_rsa,id_ed25519}
+# zstyle :omz:plugins:ssh-agent lazy yes
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,16 +125,3 @@ if [ -f "/home/pa/miniforge3/etc/profile.d/mamba.sh" ]; then
     . "/home/pa/miniforge3/etc/profile.d/mamba.sh"
 fi
 # <<< conda initialize <<<
-
-# ssh-agent on startup
-if [ -z "$SSH_AUTH_SOCK" ]; then
-    # Check for a currently running instance of the agent
-    RUNNING_AGENT="$(ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]')"
-    if [ "$RUNNING_AGENT" = "0" ]; then
-        # Launch a new instance of the agent and store its output in .ssh/ssh-agent
-        mkdir -m 700 -p ~/.ssh
-        umask 077 # Ensure the file is only readable by the owner
-        ssh-agent -s >~/.ssh/ssh-agent
-    fi
-    eval $(cat ~/.ssh/ssh-agent)
-fi
