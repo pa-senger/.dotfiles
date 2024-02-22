@@ -75,11 +75,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ssh-agent)
 zstyle :omz:plugins:ssh-agent agent-forwarding yes
-# zstyle :omz:plugins:ssh-agent helper ksshaskpass
-# zstyle :omz:plugins:ssh-agent identities ~/.config/ssh/{id_rsa,id_ed25519}
-# zstyle :omz:plugins:ssh-agent lazy yes
 
 source $ZSH/oh-my-zsh.sh
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
