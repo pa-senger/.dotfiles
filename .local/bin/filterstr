@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import tempfile
+
+
+def remove_lines(filename, strings_to_remove):
+    """
+    Removes specific strings from a file. If a string to be removed is the only content on a line, the entire line is removed.
+
+    Parameters:
+    filename (str): The name of the file to remove strings from.
+    strings_to_remove (list): A list of strings to be removed.
+
+    Returns:
+    None
+    """
+    if not os.path.isfile(filename):
+        raise ValueError(f"{filename} does not exist.")
+    if not all(isinstance(item, str) and item for item in strings_to_remove):
+        raise ValueError("strings_to_remove must be a list of non-empty strings.")
+
+    dir_name = os.path.dirname(filename)
+    temp_file = tempfile.NamedTemporaryFile(mode="w", delete=False, dir=dir_name)
+
+    try:
+        with open(filename, "r") as infile, temp_file:
+            for line in infile:
+                modified_line = line
+                for string in strings_to_remove:
+                    modified_line = modified_line.replace(string, "")
+                if modified_line.strip():
+                    temp_file.write(modified_line)
+    except IOError as e:
+        os.remove(temp_file.name)
+        raise RuntimeError("Error during file operations: " + str(e))
+
+    backup_filename = filename + ".bak"
+    os.rename(filename, backup_filename)
+
+    try:
+        os.rename(temp_file.name, filename)
+    except OSError:
+        os.rename(backup_filename, filename)
+        raise
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Usage: python script.py <file> <string1> <string2> ...")
+        sys.exit(1)
+
+    filename = sys.argv[1]
+    strings_to_remove = sys.argv[2:]
+
+    try:
+        remove_lines(filename, strings_to_remove)
+    except Exception as e:
+        print("Error:", e)
+        sys.exit(1)
