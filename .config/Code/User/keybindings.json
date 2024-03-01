@@ -1,0 +1,10 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.saveFiles"
+  },
+  { "key": "alt+shift+t",
+  "command": "trailing-spaces.deleteTrailingSpaces",
+   "when": "editorTextFocus" }
+]

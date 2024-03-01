@@ -1,0 +1,124 @@
+{
+  "window.zoomLevel": 2,
+  "terminal.integrated.inheritEnv": true,
+
+  "remote.SSH.configFile": "/home/pa/.ssh/config",
+  "remote.SSH.enableDynamicForwarding": true,
+
+  // Editor settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontVariations": false,
+  "editor.fontFamily": "'DejaVu Sans Mono'",
+  "editor.fontSize": 14,
+  "editor.tabSize": 4,
+  "editor.rulers": [80, 120],
+  "editor.insertSpaces": false,
+  "editor.largeFileOptimizations": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.fontLigatures": false,
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.minimap.autohide": true,
+
+  // Color theme
+  "workbench.colorTheme": "Ayu Light Bordered",
+
+  // Brackets settings
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": false,
+
+  // File Explorer settings
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+
+  // Security settings
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // Git settings
+  "git.suggestSmartCommit": false,
+  "git.autofetch": true,
+  "git.terminalAuthentication": false,
+  "git.openRepositoryInParentFolders": "never",
+
+  // GitLens settings
+  "gitlens.currentLine.enabled": true,
+  "gitlens.hovers.currentLine.over": "line",
+
+  // Julia settings
+  "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
+  "julia.symbolCacheDownload": true,
+  "julia.enableTelemetry": true,
+  "jupyter.showVariableViewWhenDebugging": true,
+
+  // Clangd and Microsoft IntelliSense settings
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "C_Cpp.configurationWarnings": "disabled",
+  "clangd.path": "/home/pa/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
+  "clangd.arguments": [
+    "-log=verbose",
+    "-pretty",
+    "--background-index",
+    "--compile-commands-dir=${workspaceFolder}/build/",
+    "--completion-style=detailed"
+    // "--query-driver=/bin/arm-buildroot-linux-gnueabihf-g++", // for cross-compile usage
+  ],
+
+  // C/C++ settings
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+
+  // Python settings
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.terminal.activateEnvironment": true,
+
+  // Shell script settings
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+
+  // Oracle SQL settings
+  "[oraclesql]": {
+    "editor.suggest.showSnippets": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    }
+  },
+
+  // Notebook settings
+  "notebook.lineNumbers": "on",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+
+  // LaTeX Workshop settings
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.autoCompile.run": "never",
+  "latex-workshop.latex.autoCompile.interval": 0,
+  "latex-workshop.latex.autoCompile.onFailedBuild": false,
+
+  // GitHub Copilot settings
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+
+  // Search settings
+  "search.showLineNumbers": true,
+  "oracledevtools.bookmarkFileFolder": "/home/pa/Oracle/oracle.oracledevtools",
+  "oracledevtools.download.otherFolder": "/home/pa/downloads",
+  "oracledevtools.connectionConfiguration.configFilesFolder": "/home/pa/Oracle/network/admin",
+  "oracledevtools.connectionConfiguration.walletFileFolder": "/home/pa/Oracle/network/admin",
+  "cmake.showOptionsMovedNotification": false
+}
