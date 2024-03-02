@@ -4,13 +4,13 @@
 
   "remote.SSH.configFile": "/home/pa/.ssh/config",
   "remote.SSH.enableDynamicForwarding": true,
+  "remote.SSH.enableAgentForwarding": true,
 
   // Editor settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontVariations": false,
   "editor.fontFamily": "'DejaVu Sans Mono'",
   "editor.fontSize": 14,
-  "editor.tabSize": 4,
   "editor.rulers": [80, 120],
   "editor.insertSpaces": false,
   "editor.largeFileOptimizations": false,
@@ -19,6 +19,14 @@
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.minimap.autohide": true,
+  "editor.guides.highlightActiveIndentation": false,
+
+  // Xavier Clang Format settings
+  "clang-format.style": "{BasedOnStyle: LLVM, IndentWidth: 4}",
+
+  // Security settings
+  "security.workspace.trust.banner": "always",
+  "security.workspace.trust.untrustedFiles": "open",
 
   // Color theme
   "workbench.colorTheme": "Ayu Light Bordered",
@@ -31,18 +39,17 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
 
-  // Security settings
-  "security.workspace.trust.untrustedFiles": "open",
-
   // Git settings
   "git.suggestSmartCommit": false,
-  "git.autofetch": true,
-  "git.terminalAuthentication": false,
+  "git.autofetch": false,
   "git.openRepositoryInParentFolders": "never",
 
   // GitLens settings
   "gitlens.currentLine.enabled": true,
   "gitlens.hovers.currentLine.over": "line",
+
+  // Cmake settings
+  "cmake.showOptionsMovedNotification": false,
 
   // Julia settings
   "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
@@ -116,9 +123,12 @@
 
   // Search settings
   "search.showLineNumbers": true,
+
+  // Oracle DevTools settings
   "oracledevtools.bookmarkFileFolder": "/home/pa/Oracle/oracle.oracledevtools",
   "oracledevtools.download.otherFolder": "/home/pa/downloads",
   "oracledevtools.connectionConfiguration.configFilesFolder": "/home/pa/Oracle/network/admin",
-  "oracledevtools.connectionConfiguration.walletFileFolder": "/home/pa/Oracle/network/admin",
-  "cmake.showOptionsMovedNotification": false
+  "oracledevtools.connectionConfiguration.walletFileFolder": "/home/pa/Oracle/network/admin"
+
+  // Other settings
 }
