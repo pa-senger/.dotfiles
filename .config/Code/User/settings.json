@@ -5,6 +5,7 @@
   "remote.SSH.configFile": "/home/pa/.ssh/config",
   "remote.SSH.enableDynamicForwarding": true,
   "remote.SSH.enableAgentForwarding": true,
+  "remote.SSH.path": "/usr/bin/ssh",
 
   // Editor settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -50,6 +51,7 @@
 
   // Cmake settings
   "cmake.showOptionsMovedNotification": false,
+  "cmake.configureOnOpen": true,
 
   // Julia settings
   "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
