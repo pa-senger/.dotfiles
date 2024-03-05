@@ -2,12 +2,14 @@
   "window.zoomLevel": 1.5,
   "terminal.integrated.inheritEnv": true,
 
+  // Remote - SSH settings
   "remote.SSH.configFile": "/home/pa/.ssh/config",
   "remote.SSH.enableDynamicForwarding": true,
   "remote.SSH.enableAgentForwarding": true,
   "remote.SSH.path": "/usr/bin/ssh",
 
   // Editor settings
+  "search.showLineNumbers": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontVariations": false,
   "editor.fontFamily": "'DejaVu Sans Mono'",
@@ -51,25 +53,26 @@
 
   // Cmake settings
   "cmake.showOptionsMovedNotification": false,
-  "cmake.configureOnOpen": true,
+  "cmake.configureOnOpen": false,
 
   // Julia settings
   "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
   "julia.symbolCacheDownload": true,
   "julia.enableTelemetry": true,
-  "jupyter.showVariableViewWhenDebugging": true,
 
   // Clangd and Microsoft IntelliSense settings
   "C_Cpp.intelliSenseEngine": "disabled",
   "C_Cpp.configurationWarnings": "disabled",
   "clangd.path": "/home/pa/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
   "clangd.arguments": [
-    "-log=verbose",
-    "-pretty",
+    "--compile-commands-dir=${workspaceFolder}/build/default",
+    "--compile-commands-dir=${workspaceFolder}/build/debug",
+    "--compile-commands-dir=${workspaceFolder}/build/release",
+    "--compile-commands-dir=${workspaceFolder}/build",
     "--background-index",
-    "--compile-commands-dir=${workspaceFolder}/build/",
-    "--completion-style=detailed"
-    // "--query-driver=/bin/arm-buildroot-linux-gnueabihf-g++", // for cross-compile usage
+    "--header-insertion=never",
+    "--log=verbose",
+    "--query-driver=/usr/bin/g++"
   ],
 
   // C/C++ settings
@@ -101,7 +104,14 @@
     }
   },
 
+  // Oracle DevTools settings
+  "oracledevtools.bookmarkFileFolder": "/home/pa/Oracle/oracle.oracledevtools",
+  "oracledevtools.download.otherFolder": "/home/pa/downloads",
+  "oracledevtools.connectionConfiguration.configFilesFolder": "/home/pa/Oracle/network/admin",
+  "oracledevtools.connectionConfiguration.walletFileFolder": "/home/pa/Oracle/network/admin",
+
   // Notebook settings
+  "jupyter.showVariableViewWhenDebugging": true,
   "notebook.lineNumbers": "on",
   "notebook.cellToolbarLocation": {
     "default": "right",
@@ -121,16 +131,6 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  },
-
-  // Search settings
-  "search.showLineNumbers": true,
-
-  // Oracle DevTools settings
-  "oracledevtools.bookmarkFileFolder": "/home/pa/Oracle/oracle.oracledevtools",
-  "oracledevtools.download.otherFolder": "/home/pa/downloads",
-  "oracledevtools.connectionConfiguration.configFilesFolder": "/home/pa/Oracle/network/admin",
-  "oracledevtools.connectionConfiguration.walletFileFolder": "/home/pa/Oracle/network/admin"
-
+  }
   // Other settings
 }
