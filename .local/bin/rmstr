@@ -1,3 +1,21 @@
 #!/bin/zsh
 
-for file in *; do mv "${file}" "${file/"$1"/}"; done
+# Check if a substring to remove was provided
+if [ -z "$1" ]; then
+	echo "Usage: $0 <substring>"
+	exit 1
+fi
+
+# Store the substring to remove
+substring="$1"
+
+# Iterate over all files in the current directory
+for file in *; do
+	# Check if the file contains the substring
+	if [[ "$file" == *"$substring"* ]]; then
+		# Construct the new filename by removing the substring
+		new_file="${file//$substring/}"
+		# Rename the file
+		mv -- "$file" "$new_file"
+	fi
+done
